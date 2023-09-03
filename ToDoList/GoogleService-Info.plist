@@ -30,5 +30,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:764101062442:ios:be11990e4ccdf17d80f853</string>
+	<key>DATABASE_URL</key>
+	<string>https://todolist-70965-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
 </plist>

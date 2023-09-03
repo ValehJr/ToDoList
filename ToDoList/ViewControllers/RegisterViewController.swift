@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class RegisterViewController: UIViewController {
-
     
+    
+    @IBOutlet weak var confirmPasswordButton: UIButton!
+    @IBOutlet weak var passwordButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
@@ -34,7 +38,7 @@ class RegisterViewController: UIViewController {
         nameField.layer.cornerRadius = 10
         nameField.clipsToBounds = true
         
-
+        
         self.welcomeLabel.font = UIFont(name: "Poppins-Medium", size: 22)
         self.descriptionLabel.font = UIFont(name: "Poppins-Regular", size: 16)
         self.loginLabel.font = UIFont(name: "Poppins-Regular", size: 15)
@@ -48,15 +52,56 @@ class RegisterViewController: UIViewController {
         self.descriptionLabel.textColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha:1)
         self.registerButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
         self.loginButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
+        self.passwordButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
+        self.confirmPasswordButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
+        
+        confirmField.isSecureTextEntry = true
+        passwordField.isSecureTextEntry = true
         
         self.view.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
     @IBAction func registerButtonAction(_ sender: Any) {
-        
+        if let email = emailField.text, let password = passwordField.text, let name = nameField.text, let passwordConfirm = confirmField.text {
+            if password == passwordConfirm {
+                Auth.auth().createUser(withEmail: email, password: password) { [self] (result, error) in
+                    if let err = error {
+                        let allert = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
+                        allert.addAction(UIAlertAction(title: "Ok", style: .default))
+                        self.present(allert, animated: true)
+                    } else {
+                        if let uid = Auth.auth().currentUser?.uid {
+                            print("Uid:", uid)
+                            Database.database().reference().child("users").child(uid).setValue([
+                                "email": email, "name": name])
+                        }
+                        performSegue(withIdentifier: "goToLogin", sender: self)
+                    }
+                }
+            } else {
+                let allert = UIAlertController(title: "Error", message: "Password and Confirm password must be the same!", preferredStyle: .alert)
+                allert.addAction(UIAlertAction(title: "Ok", style: .default))
+                self.present(allert, animated: true)
+                confirmField.text = ""
+            }
+        }
     }
     @IBAction func loginButtonAction(_ sender: Any) {
         performSegue(withIdentifier: "goToLogin", sender: self)
+    }
+    @IBAction func passwordButtonAction(_ sender: Any) {
+        if passwordField.isSecureTextEntry{
+            passwordField.isSecureTextEntry = false
+        } else {
+            passwordField.isSecureTextEntry = true
+        }
+    }
+    @IBAction func confirmPasswordAction(_ sender: Any) {
+        if confirmField.isSecureTextEntry{
+            confirmField.isSecureTextEntry = false
+        } else {
+            confirmField.isSecureTextEntry = true
+        }
     }
     
 }

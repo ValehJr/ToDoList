@@ -94,28 +94,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GHa-LI-iNO" customClass="PaddedTextField" customModule="ToDoList" customModuleProvider="target">
                                 <rect key="frame" x="25" y="388" width="340" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Create a Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JIJ-SP-wUI" customClass="PaddedTextField" customModule="ToDoList" customModuleProvider="target">
-                                <rect key="frame" x="25" y="464" width="340" height="47"/>
+                                <rect key="frame" x="25" y="464" width="300" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OH8-Ur-0Og" customClass="PaddedTextField" customModule="ToDoList" customModuleProvider="target">
-                                <rect key="frame" x="25" y="537" width="340" height="47"/>
+                                <rect key="frame" x="25" y="537" width="300" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRP-Kb-Wvs">
                                 <rect key="frame" x="85" y="682" width="220" height="44"/>
@@ -146,6 +146,24 @@
                                     <action selector="loginButtonAction:" destination="b3K-LS-tfa" eventType="touchUpInside" id="JeE-1b-f9a"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWS-cL-SuN">
+                                <rect key="frame" x="327" y="471" width="58" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
+                                <connections>
+                                    <action selector="passwordButtonAction:" destination="b3K-LS-tfa" eventType="touchUpInside" id="b1Q-Tj-ud6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFl-rq-Cun">
+                                <rect key="frame" x="327" y="543" width="58" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
+                                <connections>
+                                    <action selector="confirmPasswordAction:" destination="b3K-LS-tfa" eventType="touchUpInside" id="t5Y-zR-0PL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2xy-IG-cu9"/>
                         <color key="backgroundColor" red="0.71372550729999995" green="0.63522807420000005" blue="0.40504556310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -153,11 +171,13 @@
                     <navigationItem key="navigationItem" id="OQb-GK-DGH"/>
                     <connections>
                         <outlet property="confirmField" destination="OH8-Ur-0Og" id="tGF-pm-G8l"/>
+                        <outlet property="confirmPasswordButton" destination="gFl-rq-Cun" id="MGv-gG-4jW"/>
                         <outlet property="descriptionLabel" destination="cjE-aq-lUI" id="mYt-4e-VAC"/>
                         <outlet property="emailField" destination="GHa-LI-iNO" id="B3l-Ep-Bg8"/>
                         <outlet property="loginButton" destination="Fnf-st-5Dm" id="Swb-xP-amR"/>
                         <outlet property="loginLabel" destination="YEP-v6-qxN" id="aO6-5b-Hhr"/>
                         <outlet property="nameField" destination="bHf-WF-jP0" id="fTu-Qz-2RK"/>
+                        <outlet property="passwordButton" destination="EWS-cL-SuN" id="xx6-Ru-LG5"/>
                         <outlet property="passwordField" destination="JIJ-SP-wUI" id="quX-Od-Znc"/>
                         <outlet property="registerButton" destination="PRP-Kb-Wvs" id="8lg-Ek-vaH"/>
                         <outlet property="welcomeLabel" destination="R3A-J9-XNR" id="Y54-3N-jgP"/>
@@ -193,14 +213,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Create a Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zjc-Hl-spc" customClass="PaddedTextField" customModule="ToDoList" customModuleProvider="target">
-                                <rect key="frame" x="25" y="537" width="340" height="47"/>
+                                <rect key="frame" x="25" y="537" width="300" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4y-lm-uh5">
                                 <rect key="frame" x="85" y="682" width="220" height="44"/>
@@ -244,6 +264,16 @@
                                     <action selector="forgotPasswordButtonAction:" destination="rwq-BO-A7E" eventType="touchUpInside" id="gtF-UT-fAs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ml0-b1-wxl">
+                                <rect key="frame" x="327" y="543" width="58" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
+                                <connections>
+                                    <action selector="confirmPasswordAction:" destination="b3K-LS-tfa" eventType="touchUpInside" id="M50-ag-7Sc"/>
+                                    <action selector="passwordButtonAction:" destination="rwq-BO-A7E" eventType="touchUpInside" id="mSc-BW-TN5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="39T-te-7E5"/>
                         <color key="backgroundColor" systemColor="systemBrownColor"/>
@@ -254,6 +284,7 @@
                         <outlet property="forgotPasswordButton" destination="JdS-pB-gcL" id="Tpn-A7-s5Q"/>
                         <outlet property="loginButton" destination="H4y-lm-uh5" id="OD9-5v-ErD"/>
                         <outlet property="mainImage" destination="xGJ-IT-i75" id="FvK-vo-3n7"/>
+                        <outlet property="passwordButton" destination="Ml0-b1-wxl" id="o4o-vx-dV4"/>
                         <outlet property="passwordField" destination="Zjc-Hl-spc" id="oYv-96-ajM"/>
                         <outlet property="registerButton" destination="4pO-vV-sbZ" id="cdJ-m8-awR"/>
                         <outlet property="registerLabel" destination="kG7-NN-D4w" id="RY2-Na-avc"/>
@@ -306,6 +337,7 @@
         <segue reference="0lp-So-Hjq"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="eye" catalog="system" width="128" height="79"/>
         <image name="logingImage" width="140.66667175292969" height="150.66667175292969"/>
         <image name="mainImage" width="230" height="169.33332824707031"/>
         <systemColor name="systemBackgroundColor">

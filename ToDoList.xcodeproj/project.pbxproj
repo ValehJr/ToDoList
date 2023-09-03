@@ -24,7 +24,7 @@
 		1DF60B2A2AA4A13200F76B54 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF60B292AA4A13200F76B54 /* FirebaseDatabase */; };
 		1DF60B2C2AA4A13200F76B54 /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF60B2B2AA4A13200F76B54 /* FirebaseInstallations */; };
 		1DF60B2E2AA4A13200F76B54 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF60B2D2AA4A13200F76B54 /* FirebaseStorage */; };
-		1DF60B302AA4A15A00F76B54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DF60B2F2AA4A15A00F76B54 /* GoogleService-Info.plist */; };
+		1DF60B322AA4A5B300F76B54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,7 @@
 		1D8179A82AA3AAD800E8FF7E /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		1D8179AA2AA3AAE600E8FF7E /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		1D8179AC2AA46EBC00E8FF7E /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
-		1DF60B2F2AA4A15A00F76B54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 				1D8179942AA3144A00E8FF7E /* Assets.xcassets */,
 				1D8179962AA3144A00E8FF7E /* LaunchScreen.storyboard */,
 				1D8179992AA3144A00E8FF7E /* Info.plist */,
-				1DF60B2F2AA4A15A00F76B54 /* GoogleService-Info.plist */,
+				1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */,
 				1D8179A72AA3AAB200E8FF7E /* Font */,
 			);
 			path = ToDoList;
@@ -187,7 +187,7 @@
 				1D8179952AA3144A00E8FF7E /* Assets.xcassets in Resources */,
 				1D8179932AA3144900E8FF7E /* Main.storyboard in Resources */,
 				1D8179AB2AA3AAE600E8FF7E /* Poppins-Regular.ttf in Resources */,
-				1DF60B302AA4A15A00F76B54 /* GoogleService-Info.plist in Resources */,
+				1DF60B322AA4A5B300F76B54 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
