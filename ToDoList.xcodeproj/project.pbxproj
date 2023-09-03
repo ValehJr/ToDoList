@@ -25,6 +25,7 @@
 		1DF60B2C2AA4A13200F76B54 /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF60B2B2AA4A13200F76B54 /* FirebaseInstallations */; };
 		1DF60B2E2AA4A13200F76B54 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF60B2D2AA4A13200F76B54 /* FirebaseStorage */; };
 		1DF60B322AA4A5B300F76B54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */; };
+		1DF60B342AA4ADEA00F76B54 /* KeyboardHide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF60B332AA4ADEA00F76B54 /* KeyboardHide.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		1D8179AA2AA3AAE600E8FF7E /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		1D8179AC2AA46EBC00E8FF7E /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1DF60B332AA4ADEA00F76B54 /* KeyboardHide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +85,12 @@
 				1D81798B2AA3144900E8FF7E /* AppDelegate.swift */,
 				1D81798D2AA3144900E8FF7E /* SceneDelegate.swift */,
 				1D8179912AA3144900E8FF7E /* Main.storyboard */,
-				1D8179AC2AA46EBC00E8FF7E /* PaddedTextField.swift */,
 				1D8179A52AA31FCC00E8FF7E /* ViewControllers */,
 				1D8179942AA3144A00E8FF7E /* Assets.xcassets */,
 				1D8179962AA3144A00E8FF7E /* LaunchScreen.storyboard */,
 				1D8179992AA3144A00E8FF7E /* Info.plist */,
 				1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */,
+				1DF60B352AA4ADF700F76B54 /* Functions */,
 				1D8179A72AA3AAB200E8FF7E /* Font */,
 			);
 			path = ToDoList;
@@ -112,6 +114,15 @@
 				1D8179A82AA3AAD800E8FF7E /* Poppins-Medium.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		1DF60B352AA4ADF700F76B54 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				1D8179AC2AA46EBC00E8FF7E /* PaddedTextField.swift */,
+				1DF60B332AA4ADEA00F76B54 /* KeyboardHide.swift */,
+			);
+			path = Functions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF60B342AA4ADEA00F76B54 /* KeyboardHide.swift in Sources */,
 				1D8179902AA3144900E8FF7E /* LaunchViewController.swift in Sources */,
 				1D81798C2AA3144900E8FF7E /* AppDelegate.swift in Sources */,
 				1D81798E2AA3144900E8FF7E /* SceneDelegate.swift in Sources */,

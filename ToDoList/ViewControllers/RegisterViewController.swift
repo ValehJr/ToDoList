@@ -60,6 +60,8 @@ class RegisterViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
         self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        hideKeyboardWhenTappedAround()
     }
     @IBAction func registerButtonAction(_ sender: Any) {
         if let email = emailField.text, let password = passwordField.text, let name = nameField.text, let passwordConfirm = confirmField.text {

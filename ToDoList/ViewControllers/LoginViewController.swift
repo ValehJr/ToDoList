@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var passwordButton: UIButton!
     @IBOutlet weak var mainImage: UIImageView!
     
     @IBOutlet weak var passwordField: PaddedTextField!
@@ -16,7 +19,7 @@ class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var forgotPasswordButton:
-        UIButton!
+    UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
@@ -25,12 +28,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         passwordField.layer.cornerRadius = 10
         passwordField.clipsToBounds = true
         emailField.layer.cornerRadius = 10
         emailField.clipsToBounds = true
-
+        
         self.welcomeLabel.font = UIFont(name: "Poppins-Medium", size: 22)
         self.registerLabel.font = UIFont(name: "Poppins-Regular", size: 15)
         
@@ -42,17 +45,52 @@ class LoginViewController: UIViewController {
         self.loginButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
         self.forgotPasswordButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
         
+        self.passwordButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
+        
+        passwordField.isSecureTextEntry = true
+        
         self.view.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
         self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        hideKeyboardWhenTappedAround()
     }
     @IBAction func forgotPasswordButtonAction(_ sender: Any) {
-        
+        if let email = emailField.text {
+            Auth.auth().sendPasswordReset(withEmail: email){ [self] (error) in
+                if let err = error {
+                    let allert = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
+                    allert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(allert,animated: true)
+                } else {
+                    let allert = UIAlertController(title: "Success", message: "Reset email was sent, check your inbox!", preferredStyle: .alert)
+                    allert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(allert,animated: true)
+                }
+            }
+        }
     }
     @IBAction func loginButtonAction(_ sender: Any) {
-        
+        if let email = emailField.text, let password = passwordField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { [self] (result,error) in
+                if let err = error {
+                    let alert = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alert, animated: true)
+                } else {
+                    performSegue(withIdentifier: "goToMain", sender: self)
+                }
+            }
+        }
     }
     @IBAction func registerButtonAction(_ sender: Any) {
         performSegue(withIdentifier: "goToRegister", sender: self)
+    }
+    @IBAction func passwordButtonAction(_ sender: Any) {
+        if passwordField.isSecureTextEntry{
+            passwordField.isSecureTextEntry = false
+        } else {
+            passwordField.isSecureTextEntry = true
+        }
     }
     
 }
