@@ -10,9 +10,12 @@ import UIKit
 class LaunchViewController: UIViewController {
 
     @IBOutlet weak var startButton: UIButton!
+    
     @IBOutlet weak var descripLabel: UILabel!
     @IBOutlet weak var welcomeLabel: UILabel!
+    
     @IBOutlet weak var mainImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,9 +26,9 @@ class LaunchViewController: UIViewController {
         self.view.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
+    
     @IBAction func startButtonAction(_ sender: Any) {
         performSegue(withIdentifier: "goToRegister", sender: self)
     }
-    
 }
 
