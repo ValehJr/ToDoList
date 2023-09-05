@@ -26,6 +26,7 @@
 		1DF60B2E2AA4A13200F76B54 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF60B2D2AA4A13200F76B54 /* FirebaseStorage */; };
 		1DF60B322AA4A5B300F76B54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */; };
 		1DF60B342AA4ADEA00F76B54 /* KeyboardHide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF60B332AA4ADEA00F76B54 /* KeyboardHide.swift */; };
+		1DF60B372AA622DE00F76B54 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF60B362AA622DE00F76B54 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		1D8179AC2AA46EBC00E8FF7E /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DF60B332AA4ADEA00F76B54 /* KeyboardHide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHide.swift; sourceTree = "<group>"; };
+		1DF60B362AA622DE00F76B54 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +86,12 @@
 			children = (
 				1D81798B2AA3144900E8FF7E /* AppDelegate.swift */,
 				1D81798D2AA3144900E8FF7E /* SceneDelegate.swift */,
+				1D8179962AA3144A00E8FF7E /* LaunchScreen.storyboard */,
 				1D8179912AA3144900E8FF7E /* Main.storyboard */,
 				1D8179A52AA31FCC00E8FF7E /* ViewControllers */,
-				1D8179942AA3144A00E8FF7E /* Assets.xcassets */,
-				1D8179962AA3144A00E8FF7E /* LaunchScreen.storyboard */,
 				1D8179992AA3144A00E8FF7E /* Info.plist */,
 				1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */,
+				1D8179942AA3144A00E8FF7E /* Assets.xcassets */,
 				1DF60B352AA4ADF700F76B54 /* Functions */,
 				1D8179A72AA3AAB200E8FF7E /* Font */,
 			);
@@ -103,6 +105,7 @@
 				1D81799F2AA31FAA00E8FF7E /* RegisterViewController.swift */,
 				1D8179A12AA31FB400E8FF7E /* LoginViewController.swift */,
 				1D8179A32AA31FC600E8FF7E /* MainViewController.swift */,
+				1DF60B362AA622DE00F76B54 /* AddViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			files = (
 				1DF60B342AA4ADEA00F76B54 /* KeyboardHide.swift in Sources */,
 				1D8179902AA3144900E8FF7E /* LaunchViewController.swift in Sources */,
+				1DF60B372AA622DE00F76B54 /* AddViewController.swift in Sources */,
 				1D81798C2AA3144900E8FF7E /* AppDelegate.swift in Sources */,
 				1D81798E2AA3144900E8FF7E /* SceneDelegate.swift in Sources */,
 				1D8179A42AA31FC600E8FF7E /* MainViewController.swift in Sources */,
