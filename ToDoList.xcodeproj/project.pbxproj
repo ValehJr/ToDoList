@@ -19,6 +19,8 @@
 		1D8179A92AA3AAD800E8FF7E /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8179A82AA3AAD800E8FF7E /* Poppins-Medium.ttf */; };
 		1D8179AB2AA3AAE600E8FF7E /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8179AA2AA3AAE600E8FF7E /* Poppins-Regular.ttf */; };
 		1D8179AD2AA46EBC00E8FF7E /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8179AC2AA46EBC00E8FF7E /* PaddedTextField.swift */; };
+		1D8983582AA88E2900A1A4E1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8983562AA88E2900A1A4E1 /* CustomTableViewCell.swift */; };
+		1D8983592AA88E2900A1A4E1 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D8983572AA88E2900A1A4E1 /* CustomTableViewCell.xib */; };
 		1DF60B262AA4A13200F76B54 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF60B252AA4A13200F76B54 /* FirebaseAnalytics */; };
 		1DF60B282AA4A13200F76B54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF60B272AA4A13200F76B54 /* FirebaseAuth */; };
 		1DF60B2A2AA4A13200F76B54 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF60B292AA4A13200F76B54 /* FirebaseDatabase */; };
@@ -27,6 +29,7 @@
 		1DF60B322AA4A5B300F76B54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */; };
 		1DF60B342AA4ADEA00F76B54 /* KeyboardHide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF60B332AA4ADEA00F76B54 /* KeyboardHide.swift */; };
 		1DF60B372AA622DE00F76B54 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF60B362AA622DE00F76B54 /* AddViewController.swift */; };
+		1DF60B3B2AA746C100F76B54 /* ViewMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF60B3A2AA746C100F76B54 /* ViewMove.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +47,12 @@
 		1D8179A82AA3AAD800E8FF7E /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		1D8179AA2AA3AAE600E8FF7E /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		1D8179AC2AA46EBC00E8FF7E /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
+		1D8983562AA88E2900A1A4E1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		1D8983572AA88E2900A1A4E1 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DF60B332AA4ADEA00F76B54 /* KeyboardHide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHide.swift; sourceTree = "<group>"; };
 		1DF60B362AA622DE00F76B54 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		1DF60B3A2AA746C100F76B54 /* ViewMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMove.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,8 @@
 				1D81798D2AA3144900E8FF7E /* SceneDelegate.swift */,
 				1D8179962AA3144A00E8FF7E /* LaunchScreen.storyboard */,
 				1D8179912AA3144900E8FF7E /* Main.storyboard */,
+				1D8983572AA88E2900A1A4E1 /* CustomTableViewCell.xib */,
+				1D8983562AA88E2900A1A4E1 /* CustomTableViewCell.swift */,
 				1D8179A52AA31FCC00E8FF7E /* ViewControllers */,
 				1D8179992AA3144A00E8FF7E /* Info.plist */,
 				1DF60B312AA4A5B300F76B54 /* GoogleService-Info.plist */,
@@ -124,6 +132,7 @@
 			children = (
 				1D8179AC2AA46EBC00E8FF7E /* PaddedTextField.swift */,
 				1DF60B332AA4ADEA00F76B54 /* KeyboardHide.swift */,
+				1DF60B3A2AA746C100F76B54 /* ViewMove.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -197,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D8179982AA3144A00E8FF7E /* LaunchScreen.storyboard in Resources */,
+				1D8983592AA88E2900A1A4E1 /* CustomTableViewCell.xib in Resources */,
 				1D8179A92AA3AAD800E8FF7E /* Poppins-Medium.ttf in Resources */,
 				1D8179952AA3144A00E8FF7E /* Assets.xcassets in Resources */,
 				1D8179932AA3144900E8FF7E /* Main.storyboard in Resources */,
@@ -212,7 +222,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF60B3B2AA746C100F76B54 /* ViewMove.swift in Sources */,
 				1DF60B342AA4ADEA00F76B54 /* KeyboardHide.swift in Sources */,
+				1D8983582AA88E2900A1A4E1 /* CustomTableViewCell.swift in Sources */,
 				1D8179902AA3144900E8FF7E /* LaunchViewController.swift in Sources */,
 				1DF60B372AA622DE00F76B54 /* AddViewController.swift in Sources */,
 				1D81798C2AA3144900E8FF7E /* AppDelegate.swift in Sources */,
@@ -380,7 +392,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ToDoList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ToDoListValeh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -408,7 +420,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ToDoList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ToDoListValeh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -33,13 +33,23 @@ class AddViewController: UIViewController {
         self.descriptionLabel.textColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha:1)
         
         let placeholderColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.74)
-        taskField.attributedPlaceholder = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
+        taskField.attributedPlaceholder = NSAttributedString(string: "Task...", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
         
         self.addButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
         
         self.view.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
         self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        hideKeyboardWhenTappedAround()
        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.addKeyboardObserver()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.removeKeyboardObserver()
     }
 
     @IBAction func addButtonAction(_ sender: Any) {
@@ -50,7 +60,7 @@ class AddViewController: UIViewController {
         if let uid = Auth.auth().currentUser?.uid {
             let tasksRef = ref.child("users").child(uid).child("tasks")
             let tasksKey = tasksRef.childByAutoId().key!
-            tasksRef.child(tasksKey).setValue(task) { (error,_ )in
+            tasksRef.child(tasksKey).setValue(task.capitalizingFirstLetter()) { (error,_ )in
                 if let err = error {
                     print(err.localizedDescription)
                 } else {
@@ -65,5 +75,15 @@ class AddViewController: UIViewController {
         
         performSegue(withIdentifier: "goToMain", sender: self)
     }
-    
+}
+
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
 }

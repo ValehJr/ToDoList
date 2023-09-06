@@ -49,7 +49,10 @@ class RegisterViewController: UIViewController {
         passwordField.attributedPlaceholder = NSAttributedString(string: "Create a Password", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
         confirmField.attributedPlaceholder = NSAttributedString(string: "Confirm your Password", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
         
+        self.welcomeLabel.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
         self.descriptionLabel.textColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha:1)
+        self.loginLabel.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        
         self.registerButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
         self.loginButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
         self.passwordButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
@@ -63,6 +66,17 @@ class RegisterViewController: UIViewController {
         
         hideKeyboardWhenTappedAround()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addKeyboardObserver()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.removeKeyboardObserver()
+    }
+    
     @IBAction func registerButtonAction(_ sender: Any) {
         if let email = emailField.text, let password = passwordField.text, let name = nameField.text, let passwordConfirm = confirmField.text {
             if password == passwordConfirm {

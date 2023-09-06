@@ -35,7 +35,10 @@ class LoginViewController: UIViewController {
         emailField.clipsToBounds = true
         
         self.welcomeLabel.font = UIFont(name: "Poppins-Medium", size: 22)
+        self.welcomeLabel.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        
         self.registerLabel.font = UIFont(name: "Poppins-Regular", size: 15)
+        self.registerLabel.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
         
         let placeholderColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.74)
         emailField.attributedPlaceholder = NSAttributedString(string: "Enter your Email Address", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
@@ -54,6 +57,17 @@ class LoginViewController: UIViewController {
         
         hideKeyboardWhenTappedAround()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addKeyboardObserver()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.removeKeyboardObserver()
+    }
+    
     @IBAction func forgotPasswordButtonAction(_ sender: Any) {
         if let email = emailField.text {
             Auth.auth().sendPasswordReset(withEmail: email){ [self] (error) in

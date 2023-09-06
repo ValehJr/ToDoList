@@ -7,15 +7,30 @@
 
 import UIKit
 import FirebaseCore
+import FirebaseAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window:UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        if let user = Auth.auth().currentUser {
+            // User is already authenticated; navigate to the appropriate view controller.
+            // Example:
+            let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            let navigationController = UINavigationController(rootViewController: mainViewController)
+            window?.rootViewController = navigationController
+        } else {
+            // User is not authenticated; navigate to the login/signup view controller.
+            // Example:
+            let launchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LaunchViewController") as! LaunchViewController
+            let navigationController = UINavigationController(rootViewController: launchViewController)
+            window?.rootViewController = navigationController
+        }
+        
         return true
     }
 
