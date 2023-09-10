@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LaunchViewController: UIViewController {
 
@@ -15,6 +16,8 @@ class LaunchViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     
     @IBOutlet weak var mainImage: UIImageView!
+    
+    var window:UIWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +30,25 @@ class LaunchViewController: UIViewController {
         
         self.startButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
         self.view.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
+        
+        chechkForUser()
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     @IBAction func startButtonAction(_ sender: Any) {
         performSegue(withIdentifier: "goToRegister", sender: self)
     }
+    
+    func chechkForUser() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        if let user = Auth.auth().currentUser {
+            performSegue(withIdentifier: "goToMain", sender: self)
+            print("User is logged in:",user)
+        } else {
+            print("User is not logged in")
+        }
+    }
+    
 }
 

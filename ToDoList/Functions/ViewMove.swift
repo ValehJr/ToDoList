@@ -60,8 +60,9 @@ extension UIViewController {
     }
     
     @objc func dismissKeyboard() {
-        // Dismiss the keyboard by resigning the first responder
-        self.view.endEditing(true)
+        if let activeTextField = UIResponder.currentFirst() as? PaddedTextField ?? UIResponder.currentFirst() as? UITextView {
+            activeTextField.resignFirstResponder()
+        }
         // Reset the view's position
         self.view.frame.origin.y = 0
     }

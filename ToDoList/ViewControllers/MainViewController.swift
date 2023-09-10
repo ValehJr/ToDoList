@@ -12,6 +12,7 @@ import FirebaseDatabase
 class MainViewController: UIViewController,CustomTableViewCellDelegate {
     
     
+    @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var dairyLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var tableButton: UIButton!
@@ -35,6 +36,8 @@ class MainViewController: UIViewController,CustomTableViewCellDelegate {
         
         self.dairyLabel.font =  UIFont(name: "Poppins-Medium", size: 13)
         self.dairyLabel.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        
+        self.signOutButton.tintColor = UIColor(red: 85/255, green: 132/255, blue: 122/255, alpha: 1)
         
         self.view.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1)
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -117,8 +120,17 @@ class MainViewController: UIViewController,CustomTableViewCellDelegate {
                 }
             })
         }
+        
     }
     
+    @IBAction func singOutButtonAction(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "goToLogin", sender: self)
+        } catch let error as NSError {
+            print("Error signing out: \(error.localizedDescription)")
+        }
+    }
     
     
     func didTapDeleteButton(at indexPath: IndexPath) {
