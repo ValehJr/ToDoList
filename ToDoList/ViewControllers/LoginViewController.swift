@@ -11,8 +11,11 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var passwordFieldConstraint: NSLayoutConstraint!
     @IBOutlet weak var passwordButton: UIButton!
+    
     @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var mainImageHeight: NSLayoutConstraint!
     
     @IBOutlet weak var passwordField: PaddedTextField!
     @IBOutlet weak var emailField: PaddedTextField!
@@ -25,6 +28,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var registerLabel: UILabel!
     @IBOutlet weak var welcomeLabel: UILabel!
+    
+    let screenSize: CGRect = UIScreen.main.bounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +61,10 @@ class LoginViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
         
         hideKeyboardWhenTappedAround()
+        
+        if screenSize.height < 700 {
+            mainImageHeight.constant = 180
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
